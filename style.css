@@ -1,4 +1,6 @@
-/* General styles for the page */
+
+<style> 
+    /* General styles for the page */
 
 @font-face {
     font-family: 'OpenSans';
@@ -397,3 +399,4 @@ footer nav ul li a:hover {
       font-size:24px;
     }
   }
+</style>
