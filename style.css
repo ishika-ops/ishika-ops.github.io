@@ -1,0 +1,399 @@
+/* General styles for the page */
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/snowtop-caps/SnowtopCaps.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Donder';
+    src: url('fonts/donder-free-trial/Donder Free Trial.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: rgba(155, 218, 241, 0.8);
+    line-height: 1.8;
+}
+
+/* Header */
+header {
+    background: rgba(155, 218, 241, 0.8);
+    padding: 20px;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'OpenSans', cursive;
+    letter-spacing: 10px;
+    display: inline-block; /* For proper centering */
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #17007e;
+}
+
+#main-nav a.active {
+    text-decoration: underline;
+    font-weight: bold; /* Optional, if you want it to stand out more */
+}
+
+/* Sections */
+section {
+    position: relative;
+    padding: 50px;
+    margin: 50px auto;
+    background: rgba(155, 218, 241, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#science p {
+    margin: 1.5rem 0; 
+    line-height: 1.9; 
+    text-align: justify;
+    color: white;
+}
+
+
+/* Snow for even sections (left edge) */
+section:nth-of-type(2n)::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url('assets/snow2.png') no-repeat left top;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* Snow for odd sections (right edge) */
+section:nth-of-type(2n+1)::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    background: url('assets/snow1.png') no-repeat right top;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* For central sections (e.g., every 3rd) */
+section:nth-of-type(3n)::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 50px;
+    background: url('assets/snow2.png') no-repeat center top;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* Snow for even sections (left edge) */
+section:nth-of-type(2n)::after {
+    content: '';
+    position: absolute;
+    top: -52px;
+    right: -532px;
+    width: 100%;
+    height: 100px;
+    background: url('assets/snow-crystal-1.png') no-repeat left top;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* Snow for odd sections (right edge) */
+section:nth-of-type(2n+1)::after {
+    content: '';
+    position: absolute;
+    top: -38px;
+    right: 44px;
+    width: 100%;
+    height: 91px;
+    background: url('assets/snow-crystal-2.png') no-repeat right top;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* For central sections (e.g., every 3rd) */
+section:nth-of-type(3n)::after {
+    content: '';
+    position: absolute;
+    top: -49px;
+    left: 79%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 96px;
+    background: url('assets/snow-crystal-1.png') no-repeat center top;
+    background-size: contain;
+    z-index: -1;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section headers */
+section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-family:'Donder';
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #cdd3d4, 0 0 20px #a1adba;
+}
+
+/* Text within sections */
+section p {
+    text-align: left;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* Section 1: image below text */
+section:nth-of-type(1) {
+    display: block;
+}
+
+/* Section 2: image below text */
+section:nth-of-type(2) {
+    display: block; 
+}
+
+/* Section 3: image below text */
+section:nth-of-type(3) {
+    display: block; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-size: cover;
+    color: #3022c9;
+    position: relative;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    text-shadow: none;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #261aca;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 15px #a0a0a0;
+}
+
+footer nav ul li a:hover {
+    color: #2a9bcc;
+}
+
+/* Snow animation */
+.snowflake {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    section {
+        margin-bottom: 30px; 
+    }
+}
+
+
+#backToTop {
+    position: fixed;
+    bottom: 100px;
+    right: 100px; 
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: rgba(244, 244, 244, 0.8);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+
+.waves {
+    position:relative;
+    width: 100vw;
+    height:25vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+  }
+  
+  .content {
+    position:relative;
+    height:20vh;
+    text-align:center;
+    background-color: white;
+  }
+  
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  }
